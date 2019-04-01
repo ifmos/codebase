@@ -2,7 +2,39 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.10.5"
+    "@types/eslint": "^4.16.6",
+    "@types/jest": "^24.0.11",
+    "eslint": "^5.16.0",
+    "jest": "^24.5.0",
+    "lerna": "^3.10.5",
+    "ts-jest": "^24.0.1"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "packages/**/*.{js,ts}"
+    ]
   },
   "version": "0.0.1"
 }
